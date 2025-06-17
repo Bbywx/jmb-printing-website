@@ -1,183 +1,178 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>JMB Printing Services</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
       margin: 0;
       padding: 0;
+      background: #f4f4f4;
     }
     header {
-      background-color: #333;
+      background: #333;
       color: white;
       padding: 20px;
       text-align: center;
     }
-    header img {
+    img.logo {
       max-height: 100px;
     }
-    section {
+    .container {
       padding: 20px;
     }
-    .pricing-table, .cart-table {
+    table {
       width: 100%;
       border-collapse: collapse;
+      margin-bottom: 30px;
     }
-    .pricing-table th, .pricing-table td, .cart-table th, .cart-table td {
-      border: 1px solid #ddd;
+    th, td {
       padding: 10px;
+      border: 1px solid #ccc;
       text-align: center;
     }
+    th {
+      background: #555;
+      color: white;
+    }
     .gallery img {
-      width: 150px;
+      width: 200px;
       margin: 10px;
-      border: 2px solid #333;
     }
     .btn {
       padding: 8px 12px;
-      background: #007BFF;
+      background: #28a745;
       color: white;
       border: none;
       cursor: pointer;
     }
-    .btn:hover {
-      background: #0056b3;
+    .checkout {
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    #receipt {
+      background: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="E:\html/Jorenz M Balbuena.jpg" alt=" ">
-    <h1>JMB PRINTING SERVICES</h1>
-    <p>Email: jmbprintingservices12@gmail.com | Contact: 09931109148</p>
-    <p><a href="https://www.facebook.com/profile.php?id=61563357560871" target="_blank" style="color:white">Facebook: JMB Printing Services</a></p>
+    <img src="JMB22-removebg-preview.png" alt="JMB Logo" class="logo" />
+    <h1>JMB Printing Services</h1>
+    <p>Email: jmbprintingservices12@gmail.com | CP No.: 09931109148</p>
+    <p><a href="https://www.facebook.com/profile.php?id=61563357560871" target="_blank" style="color:white">Facebook Page: JMB Printing Services</a></p>
   </header>
-
-  <section>
+  <div class="container">
     <h2>Pricing Table</h2>
-    <table class="pricing-table" id="pricingTable">
-      <thead>
-        <tr><th>Item</th><th>Price</th><th>Qty</th><th>Order</th></tr>
-      </thead>
-      <tbody id="itemsBody"></tbody>
-    </table>
-  </section>
+    <form id="orderForm">
+      <table>
+        <tr><th>Item</th><th>Price</th><th>Quantity</th><th>Action</th></tr>
+        <tbody id="priceList"></tbody>
+      </table>
+      <p><strong>Total: ₱<span id="totalAmount">0</span></strong></p>
+      <button type="button" class="checkout" onclick="checkout()">Checkout</button>
+    </form>
 
-  <section>
-    <h2>Cart</h2>
-    <table class="cart-table" id="cartTable">
-      <thead>
-        <tr><th>Item</th><th>Qty</th><th>Total</th></tr>
-      </thead>
-      <tbody id="cartBody"></tbody>
-      <tfoot>
-        <tr><th colspan="2">Grand Total</th><th id="grandTotal">0</th></tr>
-      </tfoot>
-    </table>
-    <button class="btn" onclick="checkout()">Checkout</button>
-  </section>
-
-  <section>
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="E:\IKAGES/pic1.png" alt=" ">
-      <img src="E:\IKAGES/pic2.png" alt=" ">
-      <img src="E:\IKAGES/pic3.png" alt=" ">
-      <img src="E:\IKAGES/pic4.png" alt=" ">
-      <img src="E:\IKAGES/pic5.png" alt=" ">
-      <img src="E:\IKAGES/pic6.png" alt=" ">
-      <img src="E:\IKAGES/pic7.png" alt=" ">
-      <img src="E:\IKAGES/pic8.png" alt=" ">
-      <img src="E:\IKAGES/pic8.png" alt=" ">
-      <img src="E:\IKAGES/pic10.png" alt=" ">
-      <img src="E:\IKAGES/pic11.png" alt=" ">
-      <img src="E:\IKAGES/pic12.png" alt=" ">
-      <img src="E:\IKAGES/pic13.png" alt=" ">
-      <img src="E:\IKAGES/pic14.png" alt=" ">
-      <img src="E:\IKAGES/pic15.png" alt=" ">
-      <img src="E:\IKAGES/pic16.png" alt=" ">
-      <img src="E:\IKAGES/ic17.png" alt=" ">
+      <img src="E:\IKAGES/pic1.jpg" alt=" ">
+<img src="E:\IKAGES/pic1.jpg" alt=" ">
+<img src="E:\IKAGES/pic2.jpg" alt=" ">
+<img src="E:\IKAGES/pic3.jpg" alt=" ">
+<img src="E:\IKAGES/pic4.jpg" alt=" ">
+<img src="E:\IKAGES/pic5.jpg" alt=" ">
+<img src="E:\IKAGES/pic6.jpg" alt=" ">
+<img src="E:\IKAGES/pic7.jpg" alt=" ">
+<img src="E:\IKAGES/pic8.jpg" alt=" ">
+<img src="E:\IKAGES/pic9.jpg" alt=" ">
+<img src="E:\IKAGES/pic10.jpg" alt=" ">
+<img src="E:\IKAGES/pic11.jpg" alt=" ">
+<img src="E:\IKAGES/pic12.jpg" alt=" ">
+<img src="E:\IKAGES/pic13.jpg" alt=" ">
+<img src="E:\IKAGES/pic14.jpg" alt=" ">
+<img src="E:\IKAGES/pic15.jpg" alt=" ">
+<img src="E:\IKAGES/pic16.jpg" alt=" ">
+<img src="E:\IKAGES/pic17.jpg" alt=" ">
     </div>
-  </section>
 
-  <section>
     <h2>Location</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!4v1718610000!6m8!1m7!1sso9vr2bbaVqt-psMaEt4sw!2m2!1d13.8600683!2d120.6353361!3f285.67603!4f0!5f0.7820865974627469" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!4v1718615211000!6m8!1m7!1sso9vr2bbaVqt-psMaEt4sw!2m2!1d13.8600683!2d120.6353361!3f285.67603!4f0!5f0.7820865974627469"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-  <section>
-    <h2>Payment Instructions</h2>
-    <p><strong>GCASH NUMBER:</strong> 09931109148<br>
-    <strong>GCASH NAME:</strong> Jorenz M. Balbuena<br>
-    <strong>BPI ACCOUNT NAME:</strong> Jorenz M. Balbuena<br>
-    <strong>BPI ACCOUNT NUMBER:</strong> 090931796</p>
-    <p>After sending payment, email proof to: <strong>jmbprintingservices12@gmail.com</strong></p>
-  </section>
+    <div id="receipt"></div>
+  </div>
 
   <script>
-    const items = [
+    const priceItems = [
       ["ID RUSH 1", 40], ["ID RUSH 2", 50], ["ID RUSH 3", 55], ["ID RUSH 4", 55],
       ["ID RUSH 5", 65], ["ID RUSH 6", 65], ["ID RUSH 7", 65], ["ID RUSH 8", 65],
       ["PHOTO PRINT 1", 70], ["PHOTO PRINT 2", 70], ["PHOTO PRINT 3", 75],
       ["PHOTO PRINT 4", 85], ["PHOTO PRINT 5", 85], ["PHOTO PRINT 6", 85],
       ["PHOTO PRINT 7", 90], ["PHOTO PRINT 8", 60], ["PHOTO PRINT 9", 90],
-      ["A4(COLORED)", 6], ["A4(B&W)", 5], ["SHORT(COLORED)", 7],
-      ["SHORT(B&W)", 7], ["LONG(COLORED)", 6], ["LONG(B&W)", 5],
-      ["LAMINATE", 35], ["STICKER", 200], ["RESEARCH", 100],
-      ["BookBINDING", 300]
+      ["A4(COLORED)", 6], ["A4(B&W)", 5], ["SHORT(COLORED)", 7], ["SHORT(B&W)", 7],
+      ["LONG(COLORED)", 6], ["LONG(B&W)", 5], ["LAMINATE", 35],
+      ["STICKER", 200], ["RESEARCH", 100], ["BookBINDING", 300]
     ];
 
-    const itemsBody = document.getElementById("itemsBody");
-    const cartBody = document.getElementById("cartBody");
-    const grandTotalEl = document.getElementById("grandTotal");
-    const cart = [];
+    const cart = {};
 
-    items.forEach(([name, price], i) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${name}</td>
-        <td>${price}</td>
-        <td><input type="number" id="qty${i}" min="1" value="1"></td>
-        <td><button class="btn" onclick="addToCart('${name}', ${price}, ${i})">Add to Cart</button></td>
-      `;
-      itemsBody.appendChild(row);
-    });
-
-    function addToCart(name, price, index) {
-      const qty = parseInt(document.getElementById(`qty${index}`).value);
-      const total = price * qty;
-      cart.push({ name, qty, total });
-      renderCart();
+    function generateTable() {
+      const tbody = document.getElementById("priceList");
+      priceItems.forEach(([item, price], index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${item}</td>
+          <td>${price}</td>
+          <td><input type='number' min='0' value='0' id='qty${index}'></td>
+          <td><button class='btn' onclick='addToCart(${index})'>Add to Cart</button></td>
+        `;
+        tbody.appendChild(row);
+      });
     }
 
-    function renderCart() {
-      cartBody.innerHTML = "";
-      let grandTotal = 0;
-      cart.forEach(item => {
-        grandTotal += item.total;
-        const row = document.createElement("tr");
-        row.innerHTML = `<td>${item.name}</td><td>${item.qty}</td><td>${item.total}</td>`;
-        cartBody.appendChild(row);
-      });
-      grandTotalEl.textContent = grandTotal;
+    function addToCart(index) {
+      const qty = parseInt(document.getElementById(`qty${index}`).value);
+      if (qty > 0) {
+        const [item, price] = priceItems[index];
+        cart[item] = { price, qty };
+        updateTotal();
+      }
+    }
+
+    function updateTotal() {
+      let total = 0;
+      Object.values(cart).forEach(({ price, qty }) => total += price * qty);
+      document.getElementById("totalAmount").textContent = total;
     }
 
     function checkout() {
-      const receiptId = 'JMB-' + Date.now().toString().slice(-6);
-      let emailBody = `Thank you for your order.\nReceipt No: ${receiptId}\n\nItems Ordered:\n`;
-      let total = 0;
-      cart.forEach(item => {
-        emailBody += `${item.name} x${item.qty} = PHP ${item.total}\n`;
-        total += item.total;
+      const timestamp = Date.now();
+      const receiptID = "JMB-" + timestamp.toString().slice(-6);
+      let receipt = `<h3>Receipt #: ${receiptID}</h3><ul>`;
+      Object.entries(cart).forEach(([item, { price, qty }]) => {
+        receipt += `<li>${item} - Qty: ${qty} @ ₱${price} = ₱${qty * price}</li>`;
       });
-      emailBody += `\nGrand Total: PHP ${total}\n\nPlease send payment screenshot to jmbprintingservices12@gmail.com`;
-      alert(emailBody);
+      receipt += `</ul><strong>Total: ₱${document.getElementById("totalAmount").textContent}</strong>`;
+      receipt += `<p><strong>Send files/images to:</strong> jmbprintingservices12@gmail.com</p>`;
+      receipt += `<p><strong>Payment Options:</strong><br>
+        GCASH NAME: Jorenz M. Balbuena<br>
+        GCASH NUMBER: 09931109148<br>
+        BPI NAME: Jorenz M. Balbuena<br>
+        BPI NUMBER: 090931796<br>
+        After payment, email your proof to: jmbprintingservices12@gmail.com</p>`;
+      document.getElementById("receipt").innerHTML = receipt;
+      alert("Order placed! Your receipt ID: " + receiptID);
     }
+
+    generateTable();
   </script>
 </body>
 </html>
